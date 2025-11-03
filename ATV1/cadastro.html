@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro — Patas Felizes</title>
+  <link rel="icon" href="pata.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- ESTILO GERAL --- */
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #fffaf5;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ff6f61;
+    }
+
+    a:hover {
+      color: #ff4b3e;
+    }
+
+    /* --- CABEÇALHO --- */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      border-radius: 50%;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      font-weight: 600;
+      color: #444;
+    }
+
+    .main-nav a[aria-current="page"] {
+      color: #ff6f61;
+      border-bottom: 2px solid #ff6f61;
+    }
+
+    /* --- FORMULÁRIO --- */
+    main {
+      padding: 40px 20px 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff6f61;
+      font-size: 2.2rem;
+    }
+
+    p#form-desc {
+      text-align: center;
+      max-width: 700px;
+      margin: 10px auto 30px;
+      color: #555;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 25px;
+    }
+
+    legend {
+      font-weight: 600;
+      color: #ff6f61;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff6f61;
+      outline: none;
+      box-shadow: 0 0 5px rgba(255,111,97,0.3);
+    }
+
+    small {
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    /* --- BOTÕES --- */
+    .btn {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff4b3e;
+    }
+
+    .btn.secondary {
+      background-color: transparent;
+      color: #ff6f61;
+      border: 2px solid #ff6f61;
+    }
+
+    .btn.secondary:hover {
+      background-color: #ff6f61;
+      color: #fff;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    /* --- RODAPÉ --- */
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="index.html" class="logo"><img src="img/pata.jpg" alt="logo Patas Felizes" width="80"></a>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container" role="main">
+  <h1 id="form-title">Cadastro</h1>
+  <p id="form-desc">Preencha seus dados para se candidatar como voluntário, adotar ou apoiar nossas campanhas.</p>
+
+  <form id="cadastroForm" action="#" method="post" novalidate>
+    <!-- Dados pessoais -->
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+
+      <label for="nome">Nome completo *</label>
+      <input type="text" id="nome" name="nome" required minlength="3" aria-describedby="nomeHelp">
+      <small id="nomeHelp">Informe seu nome completo.</small>
+
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="email" required aria-describedby="emailHelp">
+      <small id="emailHelp">Usaremos para contato e envio de informações importantes.</small>
+
+      <label for="cpf">CPF *</label>
+      <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" aria-describedby="cpfHelp">
+      <small id="cpfHelp">Formato: 000.000.000-00</small>
+
+      <label for="telefone">Telefone *</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="(00) 90000-0000" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" aria-describedby="telHelp">
+      <small id="telHelp">Ex: (83) 99999-9999</small>
+
+      <label for="dataNascimento">Data de nascimento *</label>
+      <input type="date" id="dataNascimento" name="dataNascimento" required max="2007-12-31">
+    </fieldset>
+
+    <!-- Endereço -->
+    <fieldset>
+      <legend>Endereço</legend>
+
+      <label for="cep">CEP *</label>
+      <input type="text" id="cep" name="cep" required pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="cepHelp">
+      <small id="cepHelp">CEP no formato 00000-000</small>
+
+      <label for="endereco">Endereço *</label>
+      <input type="text" id="endereco" name="endereco" required>
+
+      <label for="cidade">Cidade *</label>
+      <input type="text" id="cidade" name="cidade" required>
+
+      <label for="estado">Estado *</label>
+      <select id="estado" name="estado" required>
+        <option value="">Selecione...</option>
+        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+        <option>SP</option><option>SE</option><option>TO</option>
+      </select>
+    </fieldset>
+
+    <!-- Interesse -->
+    <fieldset>
+      <legend>Interesse</legend>
+
+      <label for="interesse">Como você gostaria de ajudar?</label>
+      <select id="interesse" name="interesse" required>
+        <option value="">Selecione...</option>
+        <option value="voluntario">Quero ser voluntário</option>
+        <option value="adocao">Quero adotar um animal</option>
+        <option value="doacao">Quero fazer doações</option>
+      </select>
+
+      <label for="mensagem">Mensagem (opcional)</label>
+      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre você e seu interesse..."></textarea>
+    </fieldset>
+
+    <div class="form-buttons">
+      <button type="submit" class="btn">Enviar Cadastro</button>
+      <button type="reset" class="btn secondary">Limpar</button>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>&copy; <span id="ano"></span> Patas Felizes. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

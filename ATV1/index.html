@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONG Patas Felizes</title>
+  <link rel="icon" href="pata.jpg" type="image/png">
+
+  <style>
+    /* --- ESTILO GERAL --- */
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fffaf5;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ff6f61;
+    }
+
+    a:hover {
+      color: #ff4b3e;
+    }
+
+    /* --- CABEÇALHO --- */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      border-radius: 50%;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      font-weight: 600;
+      color: #444;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: #ff6f61;
+    }
+
+    /* --- SEÇÃO HERO --- */
+    .hero {
+      background-image: url('animais-bg.jpg'); /* opcional: imagem de fundo suave */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      border-radius: 0 0 40px 40px;
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 10px auto 25px;
+    }
+
+    .btn {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #ff4b3e;
+    }
+
+    /* --- IMAGEM ACIMA DO BOTÃO --- */
+    .hero-image {
+      margin: 25px auto 35px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.03);
+    }
+
+    /* --- SEÇÃO SOBRE --- */
+    .about {
+      background-color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #ff6f61;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .about article {
+      margin: 20px 0;
+    }
+
+    .about ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about li::before {
+      content: "🐾 ";
+    }
+
+    /* --- CONTATO --- */
+    .contact {
+      background-color: #ffe9e4;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 30px;
+      margin: 40px auto;
+    }
+
+    .contact h2 {
+      color: #ff6f61;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: #ff4b3e;
+      font-weight: bold;
+    }
+
+    /* --- RODAPÉ --- */
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    footer a {
+      color: white;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 768px) {
+      .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="index.html" class="logo" aria-label="Página inicial da ONG Patas Felizes">
+      <img src="img/pata.jpg" alt="Logotipo Patas Felizes" width="80">
+    </a>
+    <nav class="main-nav" role="navigation" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="content" class="container" role="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Amor e esperança para cada patinha</h1>
+    <p>A ONG <strong>Patas Felizes</strong> atua no resgate, cuidado e adoção de cães e gatos em situação de vulnerabilidade. Faça parte dessa causa e transforme vidas!</p>
+
+    <!-- ✅ IMAGEM ACIMA DO BOTÃO -->
+    <div class="hero-image">
+      <img src="img/gato.png" alt="Cães e gatos felizes após adoção">
+    </div>
+
+    <p><a class="btn" href="projetos.html">Conheça nossos projetos</a></p>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">Quem somos</h2>
+    <article>
+      <h3>Missão</h3>
+      <p>Resgatar, reabilitar e encontrar lares amorosos para cães e gatos abandonados.</p>
+    </article>
+    <article>
+      <h3>Visão</h3>
+      <p>Ser referência em proteção animal e incentivo à adoção responsável.</p>
+    </article>
+    <article>
+      <h3>Valores</h3>
+      <ul>
+        <li>Respeito à vida</li>
+        <li>Empatia e amor</li>
+        <li>Transparência e responsabilidade</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contato</h2>
+    <address>
+      <p>Rua Esperança, 45 — João Pessoa — PB</p>
+      <p>Telefone: <a href="tel:+5583999999999">(83) 99999-9999</a></p>
+      <p>Email: <a href="mailto:contato@patasfelizes.org">contato@patasfelizes.org</a></p>
+    </address>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>&copy; <span id="ano"></span> Patas Felizes. Todos os direitos reservados.</p>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
